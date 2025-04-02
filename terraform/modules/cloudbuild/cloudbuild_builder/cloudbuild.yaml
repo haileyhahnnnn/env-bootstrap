@@ -11,5 +11,11 @@ steps:
   '--build-arg=TERRAFORM_VALIDATOR_RELEASE=${_TERRAFORM_VALIDATOR_RELEASE}',
   '-'
   ]
-
+- name: '${_REGION}/${PROJECT_ID}/terraform'
+  args: ['version']
+substitutions:
+  _TERRAFORM_VERSION: '1.2.3' # default value
+  _TERRAFORM_VERSION_SHA256SUM: 'keyValNumHere'
+  _TERRAFORM_VALIDATOR_REALEASE: '2025-04-01'
+images: ['${REGION}/${PROJECT_ID]/terraform']
   
